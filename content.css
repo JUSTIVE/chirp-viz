@@ -1,0 +1,19 @@
+.chirpviz-anchor {
+    margin-top: 2px;
+    color: rgb(113, 118, 123);
+    flex: 1;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #1d9bf0;
+    }
+    .chirpviz-icon-container {
+        display: flex;
+        align-items: center;
+    }
+}
