@@ -20,8 +20,12 @@ const addLink = (article, link) => {
   anchor.target = "_blank";
 
   //inject
-  const retweetBtn = article.querySelector("button[data-testid='retweet']");
-  const likeBtn = article.querySelector("button[data-testid='like']");
+  const retweetBtn =
+    article.querySelector("button[data-testid='retweet']") ??
+    article.querySelector("button[data-testid='unretweet']");
+  const likeBtn =
+    article.querySelector("button[data-testid='like']") ??
+    article.querySelector("button[data-testid='unlike']");
 
   if (!retweetBtn || !likeBtn) return;
 
