@@ -14,9 +14,10 @@ const addLink = (article, link) => {
 
   const anchor = document.createElement("a");
   anchor.classList.add("chirpviz-anchor");
+  anchor.style = "display:inline-flex; align-items:center; gap:4px;";
   anchor.href = `${link}/quotes`;
   anchor.appendChild(container);
-  anchor.appendChild(document.createTextNode("  인용"));
+  anchor.appendChild(document.createTextNode(" "));
   anchor.target = "_blank";
 
   //inject
@@ -44,7 +45,8 @@ const collectTweets = () => {
   document.querySelectorAll("article[data-testid='tweet']").forEach((tweet) => {
     if (tweet.querySelector(".chirpviz-anchor") === null) {
       const link = getTweetLink(tweet);
-      addLink(tweet, link);
+      console.log(link);
+      addLink(tweet, link.replaceAll("/photo/1", ""));
     }
   });
 };
